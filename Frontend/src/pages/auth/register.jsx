@@ -1,9 +1,10 @@
 import { useState, useRef } from "react";
-import { useState } from "react";
+
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import { register } from "../../api/auth";
+
+// import { register } from "../../api/auth";
 
 
 const GradientBlob = ({ className }) => (
@@ -59,7 +60,7 @@ export default function RegisterPage() {
       reader.readAsDataURL(file);
     }
   };
- // validate handler
+  // validate handler
   const validate = () => {
     const e = {};
     if (!role) e.role = "Please choose your role.";
@@ -103,9 +104,9 @@ export default function RegisterPage() {
     }
   };
 
-  
 
-  
+
+
   const ic = (field, extra = "") =>
     `w-full bg-white/5 border ${errors[field] ? "border-rose-400" : "border-white/10"} rounded-xl px-3 py-2.5 text-white placeholder-white/25 text-sm focus:outline-none focus:border-amber-400/70 focus:bg-white/10 transition-all duration-200 ${extra}`;
 
@@ -168,7 +169,7 @@ export default function RegisterPage() {
             <div className="fade-up flex items-center gap-2.5 mb-6">
               <div className="w-9 h-9 rounded-xl bg-amber-400 flex items-center justify-center shrink-0">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#0a0a0f" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#0a0a0f" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
               <span className="text-white/60 text-sm tracking-widest uppercase font-semibold">Academia</span>
@@ -362,16 +363,17 @@ export default function RegisterPage() {
                 onClick={handleSubmit}
                 // 
                 className="w-full py-3.5 rounded-xl bg-linear-to-r from-amber-400 to-amber-500 text-black font-bold text-sm tracking-wide 
-  hover:from-amber-500 hover:to-amber-600 
-  hover:scale-[1.02] active:scale-95 
-  transition-all duration-200 
-  shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40"
+                  hover:from-amber-500 hover:to-amber-600 
+                  hover:scale-[1.02] active:scale-95 
+                  transition-all duration-200 
+                  shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40"
               >
                 Create Account →
               </button>
               <p className="text-center text-white/30 text-xs">
                 Already have an account?{" "}
-                <span className="text-amber-400 cursor-pointer hover:underline">Sign in</span>
+                {/* <span className="text-amber-400 cursor-pointer hover:underline">Sign in</span> */}
+                <Link className="text-amber-400 cursor-pointer hover:underline" to="/login">Sign in</Link>
               </p>
             </div>
 
@@ -409,8 +411,8 @@ export default function RegisterPage() {
             <rect x="193" y="360" width="34" height="12" rx="4" fill="#1e1b2e" />
             <rect x="170" y="368" width="80" height="8" rx="4" fill="#1e1b2e" />
             <rect x="120" y="393" width="180" height="30" rx="8" fill="#1a1830" stroke="#2e2b50" strokeWidth="1.5" />
-            {[0,1,2,3,4,5,6,7,8].map(i => <rect key={`k1-${i}`} x={130 + i * 18} y="400" width="13" height="8" rx="2" fill="#2e2b50" />)}
-            {[0,1,2,3,4,5,6,7].map(i => <rect key={`k2-${i}`} x={139 + i * 18} y="412" width="13" height="6" rx="2" fill="#2e2b50" />)}
+            {[0, 1, 2, 3, 4, 5, 6, 7, 8].map(i => <rect key={`k1-${i}`} x={130 + i * 18} y="400" width="13" height="8" rx="2" fill="#2e2b50" />)}
+            {[0, 1, 2, 3, 4, 5, 6, 7].map(i => <rect key={`k2-${i}`} x={139 + i * 18} y="412" width="13" height="6" rx="2" fill="#2e2b50" />)}
             <rect x="315" y="394" width="34" height="22" rx="11" fill="#1a1830" stroke="#2e2b50" strokeWidth="1.5" />
             <line x1="332" y1="394" x2="332" y2="416" stroke="#2e2b50" strokeWidth="1" />
             <rect x="48" y="340" width="55" height="12" rx="3" fill="#7c3aed" />
@@ -468,7 +470,7 @@ export default function RegisterPage() {
         <div className="absolute bottom-16 left-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl px-4 py-3 fade-up d5">
           <p className="text-white/40 text-[10px] uppercase tracking-widest mb-1.5">Top Courses</p>
           <div className="flex gap-2">
-            {["🎨","🔬","💻","📐"].map((e, i) => (
+            {["🎨", "🔬", "💻", "📐"].map((e, i) => (
               <div key={i} className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center text-base">{e}</div>
             ))}
           </div>

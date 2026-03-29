@@ -1,12 +1,13 @@
 import React from 'react'
 import { Navigate, Route, Routes } from "react-router-dom";
 import { useContext } from "react";
+import { AuthContext } from "./context/AuthContext";
 
 
-import Register from './components/register'
-import Newregister from './components/newregister'
-import LoginPage from './pages/auth/login'
-import Againregister from './pages/auth/register'  
+// import Register from './components/register'
+// import Newregister from './components/newregister'
+import Register from './pages/auth/register' 
+import Login from './pages/auth/login' 
 
 
 
@@ -16,6 +17,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Login />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
     </Routes>
   );

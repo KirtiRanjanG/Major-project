@@ -1,4 +1,7 @@
 import { useState } from "react";
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+
 
 const GradientBlob = ({ className }) => (
   <div className={`absolute rounded-full blur-3xl opacity-30 pointer-events-none ${className}`} />
@@ -23,6 +26,8 @@ export default function LoginPage() {
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
+
+// validate function to check if email is valid and password is not empty
   const validate = () => {
     const e = {};
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = "Enter a valid email.";
@@ -185,7 +190,8 @@ export default function LoginPage() {
             </button>
             <p className="text-center text-white/30 text-xs">
               Don't have an account?{" "}
-              <span className="text-amber-400 cursor-pointer hover:underline">Sign up</span>
+              {/* <span className="text-amber-400 cursor-pointer hover:underline">Sign up</span> */}
+              <Link className="text-amber-400 cursor-pointer hover:underline" to="/register">Sign up</Link>
             </p>
           </div>
 
