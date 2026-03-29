@@ -174,7 +174,12 @@ export default function LoginPage() {
           <div className="fade-up delay-5 space-y-3">
             <button
               onClick={handleSubmit}
-              className="shimmer-btn w-full py-3.5 rounded-xl text-black font-bold text-sm tracking-wide hover:scale-[1.02] active:scale-95 transition-transform duration-150 shadow-lg shadow-amber-500/20"
+              // className="shimmer-btn w-full py-3.5 rounded-xl text-black font-bold text-sm tracking-wide hover:scale-[1.02] active:scale-95 transition-transform duration-150 shadow-lg shadow-amber-500/20"
+              className="w-full py-3.5 rounded-xl bg-linear-to-r from-amber-400 to-amber-500 text-black font-bold text-sm tracking-wide 
+  hover:from-amber-500 hover:to-amber-600 
+  hover:scale-[1.02] active:scale-95 
+  transition-all duration-200 
+  shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40"
             >
               Log In →
             </button>

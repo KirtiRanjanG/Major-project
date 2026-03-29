@@ -1,18 +1,41 @@
 import React from 'react'
+import { Navigate, Route, Routes } from "react-router-dom";
+import { useContext } from "react";
+
+
 import Register from './components/register'
 import Newregister from './components/newregister'
-import LoginPage from './components/loginpage'
+import LoginPage from './pages/auth/login'
+import Againregister from './pages/auth/register'  
 
-const App = () => {
+
+
+export default function App() {
+  const { token, user } = useContext(AuthContext);
+
   return (
-    <div className='w-full h-screen bg-gray-900'>
-      {/* <Register /> */}
-      <Newregister />
-      {/* <LoginPage /> */}
-
-
-    </div>
-  )
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+    </Routes>
+  );
 }
 
-export default App
+
+
+
+
+// const App = () => {
+//   return (
+//     <div className='w-full h-screen bg-gray-900'>
+//       {/* <Register />
+//       <Newregister /> */}
+//       <LoginPage />
+//       <Againregister />
+
+
+//     </div>
+//   )
+// }
+
+// export default App
